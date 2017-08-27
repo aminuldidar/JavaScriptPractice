@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<script type="text/javascript">
+function book(title, author)
+	{
+		this.title = title; 
+		this.author  = author;
+  }
+</script>
+
+</head>
+
+<body>
+
+<p>Creating a JavaScript Object.</p>
+
+<p id="demo"></p>
+
+<script type="text/javascript">
+	var myBook = new book("Perl", "Mohtashim");
+	document.write("Book title is : " + myBook.title + "<br>");
+	document.write("Book author is : " + myBook.author + "<br>");
+
+</script>
+
+</body>
+</html>

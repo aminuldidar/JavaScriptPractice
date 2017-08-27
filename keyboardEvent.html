@@ -1,0 +1,87 @@
+<html>
+   <head>
+   <title>User-defined objects</title>
+   
+		<script type="text/javascript">
+
+		</script>
+		<style>
+			 #obstkl {
+				width: 50px;
+				height: 100px;
+				margin-left: 300px;
+				margin-top: 300px;
+				position: absolute;
+				background: red;
+			}
+			#mov {
+				width: 20px;
+				height: 50px;
+				margin-left: 50px;
+				margin-top: 350px;
+				position: absolute;
+				background: brown;
+			}
+		</style>
+   </head>
+   <body>
+	<div id="obstkl"> 
+	</div>
+	<div id="mov"> 
+	</div>
+	<script type="text/javascript">
+	var id;
+	var mleft=50;
+	function myMove() {
+		  var elem = document.getElementById("mov");   
+		  //var mleft = 50;
+		  var pos = 0;
+		  //document.write("Hello World!");
+		  
+		   id = setInterval(frame, 5);
+		  
+		  function frame() {
+			if (pos == 350) {
+			  clearInterval(id);
+			}
+			else {
+			  mleft++;
+			  pos++;
+			  elem.style.marginLeft = mleft + 'px'; 
+			}
+		  }
+		}
+	function myMoveUp() {
+		  var elem = document.getElementById("mov");   
+		  var mtop = 250;
+		  var pos = 0;
+		  //document.write("Hello World!");
+		  
+		   id = setInterval(frame, 5);
+		  
+		  function frame() {
+			if (pos == 350) {
+			  clearInterval(id);
+			}
+			else {
+			  mleft++;
+			  pos++;
+			  elem.style.marginLeft = mleft + 'px';
+			  elem.style.marginTop = mtop + 'px';
+			}
+		  }
+		}
+		myMove();
+		
+	document.addEventListener('keyup', function(event) {
+	  if (event.code == 'ArrowUp') {
+		//alert('Undo!');
+		
+		clearInterval(id);
+		myMoveUp();
+	  }
+	});
+	</script>
+      
+   </body>
+</html>

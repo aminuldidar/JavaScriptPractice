@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+		.dropbtn {
+			background-color: #4CAF50;
+			color: white;
+			padding: 16px;
+			font-size: 16px;
+			border: none;
+			cursor: pointer;
+		}
+
+		.dropbtn:hover, .dropbtn:focus {
+			background-color: #3e8e41;
+		}
+		
+		.dropdown {
+			position: relative;
+			display: inline-block;
+		}
+
+		.drop {
+			position: absolute;
+			background-color: #f9f9f9;
+			min-width: 160px;
+			overflow: auto;
+			box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+		}
+		
+		.dr {
+			display: none;
+			color: black;
+			padding: 12px 16px;
+			text-decoration: none;
+		}
+
+		dr {
+		  
+		}
+		.dr a:hover {background-color: #f1f1f1}
+
+		.show {display:block;}
+	</style>
+</head>
+<body>
+
+<h2>Clickable Dropdown</h2>
+<p>Click on the button to open the dropdown menu.</p>
+
+<div class="dropdown">
+<button id="myBtn" class="dropbtn">Dropdown</button>
+  
+  <div id="myDropdown" class="drop">
+    <a href="#home" class="dr">Home</a>
+    <a href="#about" class="dr">About</a>
+    <a href="#contact" class="dr">Contact</a>
+  </div>
+  
+</div>
+
+<script>
+// Get the button, and when the user clicks on it, execute myFunction
+
+document.getElementById("myBtn").onclick = function() {myFunction()};
+
+/* myFunction toggles between adding and removing the show class, which is used to hide and show the dropdown content */
+function myFunction() {
+    //document.getElementsByClassName("dr")[0].classList.toggle("show");
+	
+		var dropdowns = document.getElementsByClassName("dr");
+	
+		var i=0;
+	
+		setf=dropdowns.length;
+		var y=setInterval(fun, 1000);
+		
+		function fun()
+		{
+			//alert(dropdowns.length);
+			var openDropdown = dropdowns[i];
+			
+			i++;
+			
+			if (!openDropdown.classList.contains('show')) 
+			{
+				openDropdown.classList.add('show');
+				
+			}
+			if(i==setf) 
+				{
+					clearInterval(y);
+					//alert('Cleared interval');
+				}
+		
+		}
+			
+}
+
+window.onclick = function(event) {
+	if (!event.target.matches('.dropbtn')) 
+	{
+
+		var dropdowns = document.getElementsByClassName("dr");
+	
+		var i=0;
+	
+		setf=dropdowns.length;
+		var y=setInterval(fun, 1000);
+		
+		function fun()
+		{
+			//alert(dropdowns.length);
+			var openDropdown = dropdowns[i];
+			
+			i++;
+			
+			if (!openDropdown.classList.contains('show')) 
+			{
+				openDropdown.classList.add('show');
+				
+			}
+			if(i==setf) 
+				{
+					clearInterval(y);
+					//alert('Cleared interval');
+				}
+		
+		}
+		
+    } // end if 
+}
+
+
+
+
+</script>
+
+</body>
+</html>

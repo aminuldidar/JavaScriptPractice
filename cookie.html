@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+
+
+	</head>
+<body>
+
+	
+	<form name="myform" action="">
+		<input type="button" value="get Cookie" onclick="ReadCookie()"/>
+	
+	</form>
+	
+	<script type="text/javascript">
+		
+			function ReadCookie()
+			{
+				var allcookies=0;
+				document.write("All cookies: " + document.cookie);
+				/*
+				cookiearray=allcookies.split(';');
+				loplength=cookiearray.length;
+				
+				for(i=0;i<loplength;i++)
+				{
+					x=cookiearray[i];
+					name=x.split('=')[0];
+					value=x.split('=')[1];
+					document.write("Name Of the Cookie: " + name + "Value Of the Cookie: " + value + "\n");
+				}
+			*/
+			
+			}
+		 
+	</script>	
+
+</body>
+</html>
